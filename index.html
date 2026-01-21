@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On the Job Training Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        deep: '#001011',    // Main Background
+                        jungle: '#093A3E',  // Card/Section BG
+                        electric: '#64E9EE',// Primary Accent
+                        sky: '#97C8EB',     // Secondary Text/Links
+                        // Light mode palette derivatives
+                        'light-sky': '#E8F4F9',   // Very light background
+                        'light-sea': '#F0F9FB',   // Subtle card background
+                        'light-teal': '#D4E9EE',  // Muted teal accent
+                        'light-depth': '#B8D9E0', // Medium teal for depth
+                        'card-teal': '#3AAFB9',   // Project card color
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="bg-light-sky text-gray-800 dark:bg-deep dark:text-sky transition-colors duration-300 antialiased font-sans overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 bg-white/75 dark:bg-deep/90 backdrop-blur-md border-b border-light-teal/40 dark:border-jungle transition-all duration-300 shadow-lg animate-slide-down overflow-x-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="logo-link text-3xl font-bold">
+                        <i> <img src="assets/images/Aubscure-logo.png" alt="Aubscure." class="w-20 h-20"></i>
+                    </a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link" style="animation-delay: 0.1s">Home</a>
+                        <a href="#about" class="nav-link" style="animation-delay: 0.2s">About Me</a>
+                        <a href="#projects" class="nav-link" style="animation-delay: 0.3s">Projects</a>
+                        <a href="#contact" class="nav-link" style="animation-delay: 0.4s">Contact</a>
+                        
+                        <button id="theme-toggle" class="p-2 rounded-full hover:bg-light-teal/30 dark:hover:bg-jungle transition-all duration-300 focus:outline-none active:scale-95" style="animation: slideDownNav 0.6s ease-out 0.5s forwards">
+                            <i class="fas fa-moon dark:hidden text-gray-700 transition-all duration-300"></i>
+                            <i class="fas fa-sun hidden dark:block text-electric transition-all duration-300"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="-mr-2 flex md:hidden items-center gap-2">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-light-teal/30 dark:hover:bg-jungle transition-all duration-300 focus:outline-none active:scale-95">
+                        <i class="fas fa-moon dark:hidden text-gray-700 transition-all duration-300"></i>
+                        <i class="fas fa-sun hidden dark:block text-electric transition-all duration-300"></i>
+                    </button>
+                    <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none transition-all duration-300 transform hover:scale-110 active:scale-95">
+                        <i class="fas fa-bars text-xl transition-transform duration-300"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:hidden hidden bg-white dark:bg-deep border-t dark:border-jungle animate-slide-down" id="mobile-menu">
+            <div class="flex flex-row justify-around items-center w-full px-2 py-3">
+                <a href="#home" class="mobile-nav-link flex-1 text-center" style="animation-delay: 0.1s">Home</a>
+                <a href="#about" class="mobile-nav-link flex-1 text-center" style="animation-delay: 0.2s">About Me</a>
+                <a href="#projects" class="mobile-nav-link flex-1 text-center" style="animation-delay: 0.3s">Projects</a>
+                <a href="#contact" class="mobile-nav-link flex-1 text-center" style="animation-delay: 0.4s">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        
+        <section id="home" class="min-h-[90vh] flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-10 dark:opacity-20 pointer-events-none overflow-hidden">
+                <div class="absolute top-20 left-4 md:left-20 w-48 h-48 md:w-72 md:h-72 bg-electric rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+                <div class="absolute top-20 right-4 md:right-20 w-48 h-48 md:w-72 md:h-72 bg-jungle rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+                <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-48 h-48 md:w-72 md:h-72 bg-sky rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center w-full">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight fade-in-up px-2" style="animation-delay: 0.1s">
+                    Crafting <span class="text-transparent bg-clip-text bg-gradient-to-r from-electric to-sky animate-shimmer bg-gradient-to-r from-electric via-sky to-electric">Digital Experiences</span><br> That Matter.
+                </h1>
+                <p class="mt-4 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-gray-600 dark:text-sky/80 fade-in-up px-4" style="animation-delay: 0.2s">
+                    Focusing on backend development and computer vision solutions. I love bridging the gap between complex data processing and intuitive user interfaces. My goal is to move beyond just 'making it work' to building software that solves real-world problems efficiently.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4 px-4">
+                    <a href="#projects" class="btn-primary px-6 sm:px-8 py-3 rounded-full bg-electric text-deep font-bold hover:opacity-90 shadow-[0_0_15px_rgba(100,233,238,0.3)] text-sm sm:text-base whitespace-nowrap relative overflow-hidden group">
+                        <span class="relative z-10 flex items-center justify-center">
+                            View Work
+                            <i class="fas fa-arrow-down ml-2 transform group-hover:translate-y-1 transition-transform duration-300"></i>
+                        </span>
+                    </a>
+                    <a href="assets/my resume.pdf" target="_blank" class="btn-secondary px-6 sm:px-8 py-3 rounded-full border border-gray-300 dark:border-electric text-gray-900 dark:text-electric font-semibold hover:bg-gray-100 dark:hover:bg-jungle text-sm sm:text-base whitespace-nowrap">
+                        My Resume <i class="fas fa-download ml-2 transition-transform duration-300 group-hover:translate-y-1"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-12 sm:py-24 bg-light-sea dark:bg-[#001517]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                    <div class="relative w-full max-w-md mx-auto lg:max-w-none flex justify-center items-center scroll-element group" style="animation-delay: 0s">
+    
+                        <div class="absolute w-64 h-64 bg-electric/20 dark:bg-electric/10 rounded-full blur-[60px] animate-blob mix-blend-multiply dark:mix-blend-screen filter"></div>
+                        <div class="absolute w-64 h-64 bg-card-teal/20 dark:bg-card-teal/10 rounded-full blur-[60px] animate-blob animation-delay-2000 mix-blend-multiply dark:mix-blend-screen filter right-10 bottom-10"></div>
+                    
+                        <div class="relative z-10 w-3/4 sm:w-2/3 lg:w-[85%] transition-all duration-500 ease-out transform group-hover:scale-105">
+                            <img src="assets/images/me (1).jpg" 
+                                 alt="Profile" 
+                                 class="w-full h-auto object-cover shadow-2xl dark:shadow-[0_0_30px_rgba(100,233,238,0.15)] 
+                                        animate-float
+                                        rounded-[2rem] sm:rounded-[3rem] 
+                                        border-none outline-none"
+                                 style="mask-image: linear-gradient(to bottom, black 80%, transparent 100%); 
+                                        -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);"
+                            >
+                            
+                            <div class="absolute inset-0 rounded-[2rem] sm:rounded-[3rem] transition-all duration-500"></div>
+                        </div>
+                    </div>
+                        <div class="hidden lg:block absolute -bottom-6 -right-6 w-full h-full border-2 border-light-depth dark:border-electric rounded-2xl -z-10 animate-pulse" style="animation-duration: 3s;"></div>
+                    
+                    <div class="mt-12 lg:mt-0 scroll-element w-full" style="animation-delay: 0.1s">
+                        <div class="shadow-dance-container fade-in-up"> 
+                            <h2 class="text-2xl sm:text-3xl  font-bold mb-6 shadow-dance-text">About Me</h2>
+                        </div>
+                        <div class="prose dark:prose-invert text-gray-600 dark:text-sky/80 text-base sm:text-lg leading-relaxed max-w-full">
+                            <p class="mb-4 break-words">
+                                A Computer Science student at STI College Davao with a passion for building the 'brains' behind applications. I might be a beginner, but I’m locked in when it comes to learning new tech.
+                            </p>
+                            <p class="mb-6 break-words">
+                                I absorb new concepts fast—whether it's debugging a framework or learning a new stack. I’m looking for a team where I can contribute early, learn from the seniors, and grow into the developer everyone relies on. (Also, I promise not to push directly to the main branch).
+                            </p>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-electric mb-4">Tech Stack</h3>
+                            <div class="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
+                                <a href="https://html.com/" target="_blank" class="tech-pill" data-tooltip="HTML5">
+                                    <i class="fab fa-html5 text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                </a>
+                                <a href="https://tailwindcss.com/" target="_blank" class="tech-pill" data-tooltip="Tailwind CSS">
+                                    <i class="fab fa-css3-alt text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                </a>
+                                <a href="https://javascript.com/" target="_blank" class="tech-pill" data-tooltip="JavaScript">
+                                    <i class="fab fa-js text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                </a>
+                                <a href="https://github.com/" target="_blank" class="tech-pill" data-tooltip="GitHub">
+                                    <i class="fab fa-github text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                </a>
+                                <a href="https://figma.com/" target="_blank" class="tech-pill" data-tooltip="UI/UX Design">
+                                    <i class="fab fa-figma text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                </a>
+                                <a href="https://php.net/" target="_blank" class="tech-pill" data-tooltip="PHP">
+                                    <i class="fab fa-php text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                </a>
+                                <a href="https://nuxt.com/" target="_blank" class="tech-pill" data-tooltip="Nuxt.js">
+                                    <i class="fab fa-vuejs text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                </a>
+                                <a href="https://laravel.com/" target="_blank" class="tech-pill" data-tooltip="Laravel">
+                                    <i class="fab fa-laravel text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                </a>
+                                <a href="https://python.org/" target="_blank" class="tech-pill" data-tooltip="Python">
+                                    <i class="fab fa-python text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-12 sm:py-24 pb-20 sm:pb-28 lg:pb-24 bg-light-sky dark:bg-deep">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="text-center mb-12 sm:mb-16 scroll-element" style="animation-delay: 0s">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white fade-in-up">Featured Projects</h2>
+                    <p class="mt-4 text-gray-600 dark:text-sky/60 fade-in-up text-sm sm:text-base" style="animation-delay: 0.1s">A selection of my recent work</p>
+                </div>
+
+                <div class="flex flex-col lg:grid lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 items-start">
+                    
+                    <article class="project-card group scroll-element mb-8 sm:mb-10 lg:mb-0" style="animation-delay: 0s">
+                        <div onclick="window.open('https://github.com/Aubscure/Kiosk---Merchandise-for-ProWare-Web-App', '_blank')" 
+                             class="block h-full flex flex-col cursor-pointer relative">
+                            
+                            <div class="relative overflow-hidden h-56 rounded-t-2xl flex-shrink-0">
+                                <img src="assets/images/kiosk.gif" alt="Merchandise Kiosk" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:opacity-75">
+                                <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">Admin Only</div>
+                            </div>
+                    
+                            <div class="p-4 sm:p-6 bg-light-sea/10 dark:bg-jungle border-l-4 border-card-teal dark:border-none rounded-b-2xl shadow-lg h-full flex flex-col justify-between">
+                                
+                                <div class="flex flex-col">
+                                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-card-teal dark:group-hover:text-electric transition-colors">Merchandise Kiosk</h3>
+                                    
+                                    <p class="description-text text-gray-600 dark:text-sky/70 text-xs sm:text-sm mb-2 break-words overflow-hidden max-h-[4.5rem] transition-[max-height] duration-500 ease-in-out md:group-hover:max-h-[24rem]">
+                                        A collaborative web app for inventory and sales management built for our CS electives. While the frontend looks pretty, I spent 70% of my time in the trenches of the backend logic—ensuring every transaction, stock update, and user session worked flawlessly. It taught me that a pretty UI is nothing without a solid engine.
+                                    </p>
+                    
+                                    <button class="see-more-btn text-card-teal dark:text-electric text-xs font-bold self-start mb-4 hover:underline focus:outline-none md:hidden z-10 relative">
+                                        See More
+                                    </button>
+
+                                    <div class="mt-8">
+                                        <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-electric mb-4">Tech Stack</h3>
+                                        <div class="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
+                                            <a href="https://html.com/" target="_blank" class="tech-pill" data-tooltip="HTML5">
+                                                <i class="fab fa-html5 text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                            </a>
+                                            <a href="https://tailwindcss.com/" target="_blank" class="tech-pill" data-tooltip="Tailwind CSS">
+                                                <i class="fab fa-css3-alt text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                            </a>
+                                            <a href="https://javascript.com/" target="_blank" class="tech-pill" data-tooltip="JavaScript">
+                                                <i class="fab fa-js text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                            </a>
+                                            <a href="https://github.com/" target="_blank" class="tech-pill" data-tooltip="GitHub">
+                                                <i class="fab fa-github text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                            </a>
+                                            <a href="https://php.net/" target="_blank" class="tech-pill" data-tooltip="PHP">
+                                                <i class="fab fa-php text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                            </a>
+                                            <a href="https://nuxt.com/" target="_blank" class="tech-pill" data-tooltip="Nuxt.js">
+                                                <i class="fab fa-vuejs text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                            </a>
+                                            <a href="https://laravel.com/" target="_blank" class="tech-pill" data-tooltip="Laravel">
+                                                <i class="fab fa-laravel text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                    
+                                <span class="text-card-teal dark:text-electric text-xs sm:text-sm font-semibold flex items-center mt-auto">
+                                    View Source Code <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card group scroll-element mb-8 sm:mb-10 lg:mb-0" style="animation-delay: 0s">
+                        <div onclick="window.open('https://github.com/Aubscure/PetTrackrV4', '_blank')" 
+                             class="block h-full flex flex-col cursor-pointer relative">
+                            
+                            <div class="relative overflow-hidden h-56 rounded-t-2xl flex-shrink-0">
+                                <img src="assets/images/pettrackr.gif" alt="PetTrackr" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:opacity-75">
+                                <div class="absolute top-4 right-4 bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">Native Desktop</div>
+                            </div>
+                    
+                            <div class="p-4 sm:p-6 bg-light-sea/10 dark:bg-jungle border-l-4 border-card-teal dark:border-none rounded-b-2xl shadow-lg h-full flex flex-col justify-between">
+                                
+                                <div class="flex flex-col">
+                                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-card-teal dark:group-hover:text-electric transition-colors">PetTrackr</h3>
+                                    
+                                    <p class="description-text text-gray-600 dark:text-sky/70 text-xs sm:text-sm mb-2 break-words overflow-hidden max-h-[4.5rem] transition-[max-height] duration-500 ease-in-out md:group-hover:max-h-[24rem]">
+                                        A native desktop application commissioned to manage veterinary, grooming, and daycare records. This was a solo freelance project written entirely in Python. It’s currently being utilized in a university library setup (which is honestly the coolest feeling). Proof that Python isn't just for scripting—it runs businesses too.
+                                    </p>
+                    
+                                    <button class="see-more-btn text-card-teal dark:text-electric text-xs font-bold self-start mb-4 hover:underline focus:outline-none md:hidden z-10 relative">
+                                        See More
+                                    </button>
+
+                                    
+                                    <div class="mt-8">
+                                        <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-electric mb-4">Tech Stack</h3>
+                                        <div class="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
+                                            <a href="https://python.org/" target="_blank" class="tech-pill" data-tooltip="Python">
+                                                <i class="fab fa-python text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <span class="text-card-teal dark:text-electric text-xs sm:text-sm font-semibold flex items-center mt-auto">
+                                    View Source Code <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <article class="project-card group scroll-element mb-8 sm:mb-10 lg:mb-0" style="animation-delay: 0s">
+                        <div onclick="window.open('https://github.com/Aubscure/SODAA-with-wall-detection', '_blank')" 
+                             class="block h-full flex flex-col cursor-pointer relative">
+                            
+                            <div class="relative overflow-hidden h-56 rounded-t-2xl flex-shrink-0">
+                                <img src="assets/images/sodaa.gif" alt="SODAA" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:opacity-75">
+                                <div class="absolute top-4 right-4 bg-electric text-black text-xs font-bold px-2 py-1 rounded transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">Mobile</div>
+                            </div>
+                    
+                            <div class="p-4 sm:p-6 bg-light-sea/10 dark:bg-jungle border-l-4 border-card-teal dark:border-none rounded-b-2xl shadow-lg h-full flex flex-col justify-between">
+                                
+                                <div class="flex flex-col">
+                                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-card-teal dark:group-hover:text-electric transition-colors">SODAA</h3>
+                                    
+                                    <p class="description-text text-gray-600 dark:text-sky/70 text-xs sm:text-sm mb-2 break-words overflow-hidden max-h-[4.5rem] transition-[max-height] duration-500 ease-in-out md:group-hover:max-h-[24rem]">
+                                        Our capstone project. It’s a mobile app that uses Computer Vision (YOLOv8 & TFLite) to help visually impaired users detect obstacles in real-time. I handled the model training and the object proximity, and other safety logic. It bridges the gap between complex AI research and an actual helpful Android app.
+                                    </p>
+                    
+                                    <button class="see-more-btn text-card-teal dark:text-electric text-xs font-bold self-start mb-4 hover:underline focus:outline-none md:hidden z-10 relative">
+                                        See More
+                                    </button>
+
+                                    
+                                    <div class="mt-8">
+                                        <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-electric mb-4">Tech Stack</h3>
+                                        <div class="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
+                                            <a href="https://github.com/" target="_blank" class="tech-pill" data-tooltip="GitHub">
+                                                <i class="fab fa-github text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                            </a>
+                                            <a href="https://python.org/" target="_blank" class="tech-pill" data-tooltip="Python">
+                                                <i class="fab fa-python text-4xl text-gray-500 hover:text-electric transition-colors duration-300"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <span class="text-card-teal dark:text-electric text-xs sm:text-sm font-semibold flex items-center mt-auto">
+                                    View Source Code <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="pt-20 sm:pt-28 lg:pt-24 pb-12 sm:pb-24 bg-light-sea dark:bg-[#001517]">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-element w-full" style="animation-delay: 0s">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 mt-8 sm:mt-16 fade-in-up">Get In Touch</h2>
+                <p class="text-gray-600 dark:text-sky/80 mb-8 sm:mb-10 text-base sm:text-lg fade-in-up px-2" style="animation-delay: 0.1s">
+                    Currently looking for new opportunities. Whether you have a question or just want to say hi, my inbox is always open.
+                </p>
+                
+                <a href="mailto:aubreyamante9@gmail.com" class="btn-primary inline-block px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-electric text-deep font-bold rounded-lg hover:bg-electric transition-all duration-300 text-sm sm:text-base">
+                    Say Hello
+                </a>
+
+                <div class="mt-12 sm:mt-16 flex justify-center gap-6 sm:gap-8 flex-wrap">
+                    <a href="https://github.com/Aubscure" class="social-icon text-gray-400 hover:text-card-teal dark:hover:text-electric text-xl sm:text-2xl transition-all duration-300 transform hover:rotate-12"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon text-gray-400 hover:text-card-teal dark:hover:text-electric text-xl sm:text-2xl transition-all duration-300 transform hover:-rotate-12"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/aubrilvr" class="social-icon text-gray-400 hover:text-card-teal dark:hover:text-electric text-xl sm:text-2xl transition-all duration-300 transform hover:rotate-12"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+                <footer class="mt-12 sm:mt-20 pt-6 sm:pt-8 border-t border-gray-200 dark:border-gray-800 text-xs sm:text-sm text-gray-500">
+                    <p>&copy; 2026 Aubscure.</p>
+                </footer>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
